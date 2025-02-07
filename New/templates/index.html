@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Proxi-Health</title>
+        <link rel="stylesheet" type="text/css" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\static\style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key"></script>
+        
+    </head>
+    <body>
+<div class="bgcontainer">
+<div class="container mt-4" id="dashboard">
+  <nav class="navbar Navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Proxi-Health</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\index.html">User</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\location_check.html">Location Check</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\admin_panel.html">Admin Panel</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\support.html">Support</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\account.html">Account</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="btn btn-primary nav-link" href="C:\Users\ASUS\OneDrive\Desktop\coding\New\templates\login.html">Login / Sign Up</a>
+      </li>
+      
+      </ul>
+    </div>
+  </nav>
+            <div class="row p-3 ml-auto rounded pb-5">
+                <div class="col-12 p-3 mt-5 rounded">
+                    <h1 class="welcome_heading">Welcome User 👋</h1>
+                </div>
+                <div class="col-12 col-md-3 col-lg-3 p-3 m-auto rounded">
+                <ul class="list-group shadow-sm shadow shadow-lg">
+                  <button class="btn btn-outline-primary list-group-item active" onclick="display('sectionDashboard')">Dashboard</button>
+                  <button class="btn btn-outline-success list-group-item" onclick="display('sectionLocation-alerts')">Location Alerts</button>
+                  <button class="btn btn-outline-info list-group-item" onclick="display('sectionHealth-reports')">Health Reports</button>
+                  <button class="btn btn-outline-warning list-group-item" onclick="display('sectionHealth-profile')">Health profile</button>
+                  <button class="btn btn-outline-danger list-group-item" onclick="display('sectionSettings')">Settings</button>
+
+                </ul>
+                </div>
+              <div class="col-12 col-md-8 col-lg-8 shadow-sm shadow shadow-lg p-3 mt-5 rounded">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Health Alerts Map</h5>
+                    <div id="health_alerts_map" style="height: 300px; background: #eee;">
+                        <div id="map" style="height: 300px;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.9625132314383!2d76.31807167518046!3d10.02903949264552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1381b31347e1%3A0x2b28a1af6fd1e246!2sModel%20Engineering%20College%2C%20Thrikkakara%2C%20Kerala!5e0!3m2!1sen!2sin!4v1602827391234!5m2!1sen!2sus" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>            
+</div>
+
+<div id="location-alerts">
+          <div class="container content shadow shadow-sm shadow-lg bg-white mt-4">
+            <h2>Location Alerts</h2>
+            <div class="card1">
+              <div class="card-body">
+                <h5 class="card-title">Location Alerts</h5>
+                <ul>
+                  <p>Visited risky zone: XYZ<br>
+                  Exposure alert on 25th Jan</p>
+                </ul>
+              </div>
+            </div>
+            </div>
+</div>
+
+<br><br>
+
+<footer>
+  <p>&copy; 2025 proxi-health</p>
+</footer>
+        </div>
+    </body>
+    
+    <script src="C:\Users\ASUS\OneDrive\Desktop\coding\New\static\script.js"></script>
+    <script>
+
+        let sections = document.querySelectorAll('[id^="section"]');
+
+            if (sections.length > 1) {
+                let sectionOne = sections[0];
+                sections.forEach((section) => {
+                    if (section != sectionOne) {
+                        $(section).css("display", "none");
+                    }
+                });
+            }
+
+            const display = (sectionId) => {
+                makeRemainingScreensInvisible(sectionId);
+                let section = document.getElementById(sectionId);
+                $(section).css("display", "block");
+                window.scrollTo(0, 0);
+            };
+
+            const makeRemainingScreensInvisible = (sectionId) => {
+                let sections = document.querySelectorAll('[id^="section"]');
+                sections.forEach((section) => {
+                    if ($(section).attr("id") != sectionId) {
+                        $(section).css("display", "none");
+                    }
+                });
+            };
+            
+            function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+}
+
+if (localStorage.getItem("darkMode") === "true") {
+    document.body.classList.add("dark-mode");
+}
+           
+    </script>   
+            
+</html>
