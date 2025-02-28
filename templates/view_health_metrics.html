@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Your Health Metrics</h1>
+
+{% if health_metrics %}
+<table>
+    <thead>
+        <tr>
+            <th>Heart Rate (bpm)</th>
+            <th>Step Count</th>
+            <th>Sleep Duration (hrs)</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for metric in health_metrics %}
+        <tr>
+            <td>{{ metric[0] }}</td>
+            <td>{{ metric[1] if metric[1] is not none else 'N/A' }}</td>
+            <td>{{ metric[2] if metric[2] is not none else 'N/A' }}</td>
+            <td>{{ metric[3].strftime('%Y-%m-%d %H:%M:%S') if metric[3] else 'N/A' }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No health metrics found.</p>
+{% endif %}
+
+<a href="{{ url_for('index') }}">Back to Dashboard</a>
+
+{% endblock %}

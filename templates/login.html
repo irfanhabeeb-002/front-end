@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="C:\Users\ASUS\OneDrive\Desktop\coding\test.css">
+  <title>Proxi-Health</title>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <link rel="stylesheet" type="text/css" href="static/login.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <div class="bgcontainer">
+        <nav class="navbar Navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+            <a class="navbar-brand" href="#">Proxi-Health</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">User</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('location_check') }}">Location Check</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('admin_panel') }}">Admin Panel</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('support') }}">Support</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('account') }}">Account</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('services') }}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('submit_health_metrics') }}">Submit Health Metrics</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <div class="wrapper">
+            <div class="card-switch">
+                <label class="switch">
+                    <input type="checkbox" class="toggle">
+                    <span class="slider"></span>
+                    <span class="card-side"></span>
+                    <div class="flip-card__inner">
+                        <div class="flip-card__front">
+                            <div class="title">Log in</div>
+                            <form class="flip-card__form" action="/login" method="POST">
+                                <input class="flip-card__input" name="email" placeholder="Email" type="email" required>
+                                <input class="flip-card__input" name="password" placeholder="Password" type="password" required>
+                                <button type="submit" class="flip-card__btn">Let`s go!</button>
+                            </form>
+                        </div>
+    
+                        <div class="flip-card__back">
+                            <div class="title">Sign up</div>
+                            <form class="flip-card__form" action="/signup" method="POST">
+                                <input class="flip-card__input" name="username" placeholder="Username" type="text" required>
+                                <input class="flip-card__input" name="email" placeholder="Email" type="email" required>
+                                <input class="flip-card__input" name="password" placeholder="Password" type="password" required>
+                                <button type="submit" class="flip-card__btn">Confirm!</button>
+                            </form>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
